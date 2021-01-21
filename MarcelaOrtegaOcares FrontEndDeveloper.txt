@@ -1,0 +1,73 @@
+// //(x*y)*z
+// //2*5*3
+// //1. Función compuesta
+const multiplyFirst = function (a, b,c) {
+  return a * b*c;
+};
+
+const rokket = function (a, b,c) {
+  return multiplyFirst(a, b,c);
+};
+console.log(rokket(5, 3,2));
+console.log(rokket(4, 2,2));
+console.log(rokket(8, 1,2));
+
+
+//2. Longest string
+
+const list = ["best", "company", "ever"];
+
+const rokket = list
+  .map((x) => {
+    return {
+      longitud: x.length,
+      palabra: x,
+    };
+  })
+  .sort((a, b) => (a.longitud > b.longitud ? 1 : -1))
+
+  .pop().palabra;
+
+console.log(rokket);
+
+//3. String repetition
+const rokket = function (str, num) {
+  return str.repeat(num);
+};
+
+console.log(rokket("nodo", 5)); // esto genera 'nodenodenodenodenode'
+console.log(rokket("abc", 2)); // esto genera 'abcabc'
+console.log(rokket("holi", 4));
+
+ //4. Only last names
+
+const contacts = [
+  { firstName: "Juanito", lastName: "Rokket" },
+  { firstName: "James", lastName: "Bond" },
+  { firstName: "Harry", lastName: "Potter" },
+];
+const rokket = function () {
+  const arr = [];
+  contacts.forEach((value) => {
+    arr.push(value["lastName"]);
+  });
+  return arr;
+ };
+ console.log(rokket(contacts));
+
+//5. Unique numbers
+
+const rokket = function (a, b) {
+  const array1 = a;
+  const array2 = b;
+
+  const array3 = array1.concat(array2);
+
+  const duplicados = array3;
+  const unicos = Array.from(new Set(duplicados));
+
+  return unicos;
+};
+
+console.log(rokket([1, 2, 5], [2, 1, 6])); // this outputs [1, 2, 5, 6]
+console.log(rokket([1, 2, 3], [4, 5, 6])); // this outputs [1, 2, 3, 4, 5, 6]
